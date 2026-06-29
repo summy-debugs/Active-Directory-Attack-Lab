@@ -60,8 +60,8 @@ Through a series of well-coordinated attacks, complete domain compromise was ach
 
 
 ![Active Directory Groups](./screenshots/setup/groups.png)
-![tstark Member Of](./screenshots/setup/tstark member of.png)
-![tstark Properties](./screenshots/setup/tstark properties.png)
+![tstark Member Of](./screenshots/setup/tstark-member-of.png)
+![tstark Properties](./screenshots/setup/tstark-properties.png)
 
 
 ## Attack Chain
@@ -218,7 +218,7 @@ john --format=krb5tgs /tmp/sqlservice.ticket --wordlist=/usr/share/wordlists/roc
 - **Password:** `MYpassword123#`
 - Demonstrates that authenticated users can request service tickets for SPN-enabled accounts and crack weak service account passwords offline.
 
-![SPN Configuration](./screenshots/setup/'spn conifg.png')
+![SPN Configuration](./screenshots/setup/spn-config.png)
 ![GetUserSPNs Output](./screenshots/attack/kerberoasting/phase3-spns.png)
 ![John Cracked sqlservice Ticket](./screenshots/attack/kerberoasting/phase3-john.png)
 
