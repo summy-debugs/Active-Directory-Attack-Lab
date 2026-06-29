@@ -59,8 +59,9 @@ Through a series of well-coordinated attacks, complete domain compromise was ach
 - **Organizational Units:** Groups, Service Accounts
 
 
-[INSERT SCREENSHOT: Active Directory Users and Computers showing domain structure]
-
+![Active Directory Groups](./screenshots/setup/groups.png)
+![tstark Member Of](./screenshots/setup/tstark member of.png)
+![tstark Properties](./screenshots/setup/tstark properties.png)
 
 
 ## Attack Chain
@@ -106,8 +107,7 @@ During the initial attempt, Responder successfully intercepted and poisoned LLMN
 - Successfully captured tstark's NTLMv2 hash
 - Hash format: `tstark::MARVEL:f7f58385b661c344:88A47BB16064969C0DF5B823FB7D599B:...`
 
-[INSERT SCREENSHOT: Responder output showing LLMNR poisoned answer]
-[INSERT SCREENSHOT: NTLMv2 hash captured]
+![NTLMv2 Hash Captured from tstark](./screenshots/attack/llmnr/phase1-hash.png)
 
 
 ### Phase 2: Hash Cracking
@@ -135,7 +135,7 @@ john /tmp/tstark.hash --wordlist=/usr/share/wordlists/fasttrack.txt
 - **Username:** tstark
 - **Password:** Password1!
 
-[INSERT SCREENSHOT: John output showing cracked password]
+![John the Ripper Cracked tstark Hash](./screenshots/attack/llmnr/phase2-john.png)
 
 
 ### Phase 3: Kerberoasting
@@ -218,9 +218,9 @@ john --format=krb5tgs /tmp/sqlservice.ticket --wordlist=/usr/share/wordlists/roc
 - **Password:** `MYpassword123#`
 - Demonstrates that authenticated users can request service tickets for SPN-enabled accounts and crack weak service account passwords offline.
 
-[INSERT SCREENSHOT: GetUserSPNs output showing sqlservice SPN]
-[INSERT SCREENSHOT: Kerberos TGS ticket captured]
-[INSERT SCREENSHOT: John cracking Kerberos ticket]
+![SPN Configuration](./screenshots/setup/'spn conifg.png')
+![GetUserSPNs Output](./screenshots/attack/kerberoasting/phase3-spns.png)
+![John Cracked sqlservice Ticket](./screenshots/attack/kerberoasting/phase3-john.png)
 
 
 
@@ -307,9 +307,8 @@ These credentials can then be used for additional attacks such as Pass-the-Hash 
 - Retrieved Kerberos keys for domain accounts.
 - Demonstrated complete compromise of Active Directory credentials.
 
-[INSERT SCREENSHOT: Adding tstark to Domain Admins]
-[INSERT SCREENSHOT: secretsdump DCSync output]
-[INSERT SCREENSHOT: Dumped NTLM hashes]
+![tstark Added to Domain Admins](./screenshots/setup/phase4-domainadmin1.png)
+![secretsdump DCSync Output](./screenshots/attack/dcsync/phase4-dcsync.png)
 
 **Commands Used:**
 ```bash
@@ -473,13 +472,7 @@ ipconfig
 ```
 
 
-[INSERT SCREENSHOT: psexec connecting to DC01]
-
-[INSERT SCREENSHOT: Interactive C:\Windows\System32 prompt]
-
-[INSERT SCREENSHOT: whoami output showing NT AUTHORITY\SYSTEM]
-
-[INSERT SCREENSHOT: ipconfig output]
+![NT AUTHORITY\SYSTEM Shell on DC01](./screenshots/attack/pass-the-hash/phase5-system.png)
 
 
 
@@ -535,21 +528,8 @@ After data collection:
 
 ### Evidence
 
-[INSERT SCREENSHOT: Neo4j running]
-
-[INSERT SCREENSHOT: BloodHound login]
-
-[INSERT SCREENSHOT: Successful bloodhound-python data collection]
-
-[INSERT SCREENSHOT: Generated JSON files]
-
-[INSERT SCREENSHOT: BloodHound dashboard]
-
-[INSERT SCREENSHOT: `tstark` node]
-
-[INSERT SCREENSHOT: `tstark → Domain Admins` relationship]
-
-[INSERT SCREENSHOT: Complete MARVEL domain graph]
+![BloodHound MARVEL.local Domain Graph](./screenshots/attack/bloodhound/phase6-bloodhound.png)
+![BloodHound Attack Path Visualization](./screenshots/attack/bloodhound/phase6-bloodhound1.png)
 
 
 ## Attack Chain Overview
