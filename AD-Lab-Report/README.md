@@ -107,7 +107,7 @@ During the initial attempt, Responder successfully intercepted and poisoned LLMN
 - Successfully captured tstark's NTLMv2 hash
 - Hash format: `tstark::MARVEL:f7f58385b661c344:88A47BB16064969C0DF5B823FB7D599B:...`
 
-![NTLMv2 Hash Captured from tstark](./screenshots/attack/llmnr/phase1-hash.png)
+![NTLMv2 Hash Captured from tstark](/screenshots/attack/llmnr/phase1-hash.png)
 
 
 ### Phase 2: Hash Cracking
@@ -135,7 +135,7 @@ john /tmp/tstark.hash --wordlist=/usr/share/wordlists/fasttrack.txt
 - **Username:** tstark
 - **Password:** Password1!
 
-![John the Ripper Cracked tstark Hash](./screenshots/attack/llmnr/phase2-john.png)
+![John the Ripper Cracked tstark Hash](/screenshots/attack/llmnr/phase2-john.png)
 
 
 ### Phase 3: Kerberoasting
@@ -218,9 +218,9 @@ john --format=krb5tgs /tmp/sqlservice.ticket --wordlist=/usr/share/wordlists/roc
 - **Password:** `MYpassword123#`
 - Demonstrates that authenticated users can request service tickets for SPN-enabled accounts and crack weak service account passwords offline.
 
-![SPN Configuration](./screenshots/setup/spn-config.png)
-![GetUserSPNs Output](./screenshots/attack/kerberoasting/phase3-spns.png)
-![John Cracked sqlservice Ticket](./screenshots/attack/kerberoasting/phase3-john.png)
+![SPN Configuration](/screenshots/setup/spn-config.png)
+![GetUserSPNs Output](/screenshots/attack/kerberoasting/phase3-spns.png)
+![John Cracked sqlservice Ticket](/screenshots/attack/kerberoasting/phase3-john.png)
 
 
 
@@ -307,8 +307,8 @@ These credentials can then be used for additional attacks such as Pass-the-Hash 
 - Retrieved Kerberos keys for domain accounts.
 - Demonstrated complete compromise of Active Directory credentials.
 
-![tstark Added to Domain Admins](./screenshots/setup/phase4-domainadmin1.png)
-![secretsdump DCSync Output](./screenshots/attack/dcsync/phase4-dcsync.png)
+![tstark Added to Domain Admins](/screenshots/setup/phase4-domainadmin1.png)
+![secretsdump DCSync Output](/screenshots/attack/dcsync/phase4-dcsync.png)
 
 **Commands Used:**
 ```bash
@@ -472,7 +472,7 @@ ipconfig
 ```
 
 
-![NT AUTHORITY\SYSTEM Shell on DC01](./screenshots/attack/pass-the-hash/phase5-system.png)
+![NT AUTHORITY\SYSTEM Shell on DC01](/screenshots/attack/pass-the-hash/phase5-system.png)
 
 
 
@@ -528,8 +528,8 @@ After data collection:
 
 ### Evidence
 
-![BloodHound MARVEL.local Domain Graph](./screenshots/attack/bloodhound/phase6-bloodhound.png)
-![BloodHound Attack Path Visualization](./screenshots/attack/bloodhound/phase6-bloodhound1.png)
+![BloodHound MARVEL.local Domain Graph](/screenshots/attack/bloodhound/phase6-bloodhound.png)
+![BloodHound Attack Path Visualization](/screenshots/attack/bloodhound/phase6-bloodhound1.png)
 
 
 ## Attack Chain Overview
