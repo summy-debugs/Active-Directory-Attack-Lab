@@ -59,9 +59,9 @@ Through a series of well-coordinated attacks, complete domain compromise was ach
 - **Organizational Units:** Groups, Service Accounts
 
 
-![Active Directory Groups](./screenshots/setup/groups.png)
-![tstark Member Of](./screenshots/setup/tstark-member-of.png)
-![tstark Properties](./screenshots/setup/tstark-properties.png)
+![Active Directory Groups](/screenshots/setup/groups.png)
+![tstark Member Of](/screenshots/setup/tstark-member-of.png)
+![tstark Properties](/screenshots/setup/tstark-properties.png)
 
 
 ## Attack Chain
@@ -307,7 +307,7 @@ These credentials can then be used for additional attacks such as Pass-the-Hash 
 - Retrieved Kerberos keys for domain accounts.
 - Demonstrated complete compromise of Active Directory credentials.
 
-![tstark Added to Domain Admins](/screenshots/setup/phase4-domainadmin1.png)
+![tstark Added to Domain Admins](/screenshots/setup/phase4-domainadmin.png)
 ![secretsdump DCSync Output](/screenshots/attack/dcsync/phase4-dcsync.png)
 
 **Commands Used:**
